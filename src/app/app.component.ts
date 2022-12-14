@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicioService } from './modelo/servicio.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PMDMO-Examen_angular_trim';
+
+  login: Boolean;
+
+  constructor(public servicio: ServicioService) {
+    this.login = false;
+  }
+
+  cambiarEstado(estado: Boolean){
+    this.login = estado;
+  }
+
 }
